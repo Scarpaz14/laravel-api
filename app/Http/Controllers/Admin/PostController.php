@@ -22,6 +22,7 @@ class PostController extends Controller
     {
         $posts = Post::all();
         $user = Auth::user();
+        $posts = ($user-> posts);
 
         return view('admin.posts.index', compact('posts'));
     }
@@ -62,6 +63,9 @@ class PostController extends Controller
         $newPost->slug = $this->getSlug($data['title']);
 
         $newPost->published = isset($data['published']); // true o false
+
+        //associo l'utente ai post che creiamo 
+        $newPost-> user_id = Auth::id(); //Auth::id mi restituisce quale utente e' loggato e quindi salva i post su quel determinato utente
         $newPost->save();
 
         // se sono presenti dei tag inerenti, li assiciamo al post appena creato;
@@ -81,6 +85,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        //se user_id e' diverso dallo user_id loggato stampiamo errore 403(es. cambio id dalla barra di ricerca)
+        if($post->user_id !== Auth::id()){
+            abort(403);
+        }
         return view('admin.posts.show', compact('post'));
     }
 
@@ -92,6 +100,11 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        //se user_id e' diverso dallo user_id loggato stampiamo errore 403(es. cambio id dalla barra di ricerca)
+        if($post->user_id !== Auth::id()){
+            abort(403);
+        }
+
         $categories= Category::all();
         $tags = Tag::all();
 
@@ -111,6 +124,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        //se user_id e' diverso dallo user_id loggato stampiamo errore 403(es. cambio id dalla barra di ricerca)
+        if($post->user_id !== Auth::id()){
+            abort(403);
+        }
+        
         // validazione
         $request->validate([
             'title' => 'required|string|max:255',
@@ -147,6 +165,11 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        //se user_id e' diverso dallo user_id loggato stampiamo errore 403(es. cambio id dalla barra di ricerca)
+        if($post->user_id !== Auth::id()){
+            abort(403);
+        }
+
         $post->delete();
 
         return redirect()->route('admin.posts.index');
