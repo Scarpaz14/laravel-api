@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::where('published', true)->with(['category', 'tags', 'users'])->get();
 
         return response()->json($posts);
     }
