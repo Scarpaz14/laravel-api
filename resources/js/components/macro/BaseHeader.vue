@@ -4,7 +4,9 @@
             <div class="col">
                 <h1>Blog Logo</h1>
             </div>
-            <div class="col"></div>
+            <div class="col">
+            <a href="/admin/posts">Area Utente</a>
+            </div>
         </div>
     </div>
   
