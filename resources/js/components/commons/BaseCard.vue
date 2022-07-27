@@ -4,7 +4,7 @@
     <div class="card-post-content">
        {{content}}
     </div>
-    <a href="">Visualizza il post</a>
+    <router-link :to="{name: 'single-post', params:{slug:slug}}">Visualizza il post</router-link>
 
 </div>
   
@@ -18,6 +18,9 @@ export default {
             type: String
         },
         content:{
+            type: String
+        },
+        slug:{
             type: String
         },
 

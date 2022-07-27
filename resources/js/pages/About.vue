@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <h1>Chi siamo</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio autem harum soluta earum fuga? Sequi, accusamus facilis. Ex incidunt placeat ea necessitatibus doloribus eius totam labore, ipsa, veniam voluptatem aut!</p>
+    <p>Indirizzo: via lorem impsum</p>
+    <p>Numero: 345 808 978</p>
+    <p>Partita Iva: 45481596498</p>
   </div>
 </template>
 
