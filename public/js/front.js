@@ -2413,7 +2413,7 @@ var render = function render() {
 
   return _vm.post ? _c("div", {
     staticClass: "container"
-  }, [_c("h1", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("div", {
+  }, [_c("h1", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("h3", [_vm._v("Autore di questo post: " + _vm._s(_vm.post.user.name))]), _vm._v(" "), _vm.post.category ? _c("p", [_vm._v("Categoria: " + _vm._s(_vm.post.category.name))]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "mt-5"
   }, [_c("router-link", {
     attrs: {
@@ -19435,7 +19435,12 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/posts/:slug",
     name: "single-post",
     component: _pages_SinglePost__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }, {
+  }, // {
+  //     path: "/posts/category",
+  //     name: "categories",
+  //     component: Categories
+  // },
+  {
     path: "/*",
     name: "error-404",
     component: _pages_Page404__WEBPACK_IMPORTED_MODULE_4__["default"]

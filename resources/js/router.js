@@ -25,6 +25,11 @@ const router = new VueRouter({
             name: "single-post",
             component: SinglePost
         },
+        // {
+        //     path: "/posts/category",
+        //     name: "categories",
+        //     component: Categories
+        // },
         {
             path: "/*",
             name: "error-404",
