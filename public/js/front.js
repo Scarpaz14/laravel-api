@@ -2078,7 +2078,7 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (error) {
       // redirect alla pagina 404
       _this.$router.push({
-        name: 'page-404'
+        name: 'error-404'
       });
     });
   }
@@ -19437,7 +19437,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     component: _pages_SinglePost__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
     path: "/*",
-    name: "Error-404",
+    name: "error-404",
     component: _pages_Page404__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });

@@ -26,7 +26,7 @@ export default {
       })
       .catch((error) => {
         // redirect alla pagina 404
-        this.$router.push({name: 'page-404'});
+        this.$router.push({name: 'error-404'});
       });
     }
 
